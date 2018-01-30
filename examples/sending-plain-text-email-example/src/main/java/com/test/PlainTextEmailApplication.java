@@ -17,7 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
 @EnableEmailTools
-public class PlainTextEmailApplication implements ApplicationContextAware {
+public class PlainTextEmailApplication {
+//        implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
@@ -28,27 +29,27 @@ public class PlainTextEmailApplication implements ApplicationContextAware {
         SpringApplication.run(PlainTextEmailApplication.class, args);
     }
 
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
-    }
+//    @Override
+//    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+//        this.applicationContext = applicationContext;
+//    }
 
-    @PostConstruct
-    public void sendEmail() throws UnsupportedEncodingException, InterruptedException {
-        testService.sendPlainTextEmail();
-
-        close();
-    }
-
-    private void close() {
-        TimerTask shutdownTask = new TimerTask() {
-            @Override
-            public void run() {
-                ((AbstractApplicationContext) applicationContext).close();
-            }
-        };
-        Timer shutdownTimer = new Timer();
-        shutdownTimer.schedule(shutdownTask, TimeUnit.SECONDS.toMillis(3));
-    }
+//    @PostConstruct
+//    public void sendEmail() throws UnsupportedEncodingException, InterruptedException {
+//        testService.sendPlainTextEmail();
+//
+//        close();
+//    }
+//
+//    private void close() {
+//        TimerTask shutdownTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                ((AbstractApplicationContext) applicationContext).close();
+//            }
+//        };
+//        Timer shutdownTimer = new Timer();
+//        shutdownTimer.schedule(shutdownTask, TimeUnit.SECONDS.toMillis(3));
+//    }
 
 }

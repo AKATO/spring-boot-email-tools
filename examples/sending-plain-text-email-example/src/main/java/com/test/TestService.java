@@ -19,10 +19,10 @@ public class TestService {
 
     public void sendPlainTextEmail() throws UnsupportedEncodingException {
         final Email email = DefaultEmail.builder()
-                .from(new InternetAddress("hari.seldon@gmail.com",
+                .from(new InternetAddress("katoajb@gmail.com",
                         "Hari Seldon"))
                 .to(newArrayList(
-                        new InternetAddress("the-real-cleon@trantor.gov",
+                        new InternetAddress("katoajb@gmail.com",
                                 "Cleon I")))
                 .subject("You shall die! It's not me, it's Psychohistory")
                 .body("Hello Planet!")
